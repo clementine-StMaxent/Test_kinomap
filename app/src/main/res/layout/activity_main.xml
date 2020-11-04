@@ -8,13 +8,10 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/voiture_recycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="@color/design_default_color_primary"
-        />
+    <ListView
+        android:id="@+id/vehicleList"
+        android:layout_width="match_parent"
+        android:layout_height="654dp" />
 
     <Button
         android:id="@+id/button_parse"
