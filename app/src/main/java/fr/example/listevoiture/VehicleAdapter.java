@@ -18,6 +18,9 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 public class VehicleAdapter extends ArrayAdapter<Vehicle> {
+    /*
+     * List<Vehicle> => pour les getter et les setters
+     */
     public VehicleAdapter(@NonNull Context context, int resource, @NonNull List<Vehicle> objects) {
         super(context, resource, objects);
     }
@@ -26,6 +29,9 @@ public class VehicleAdapter extends ArrayAdapter<Vehicle> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null){
+            /*
+             * vehicle_cell => fichier XML qui reprend chaque cellule des véhicules en fonction de leur nom et icone
+             */
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.vehicle_cell,parent,false);
         }
         /*
@@ -38,8 +44,8 @@ public class VehicleAdapter extends ArrayAdapter<Vehicle> {
         // position de l'item nom
         Vehicle currentVehicle = getItem(position);
         vehicleHolder.vehicleName.setText(currentVehicle.getName());
-        Picasso.Builder builder = new Picasso.Builder(getContext());
 
+        Picasso.Builder builder = new Picasso.Builder(getContext());
         builder.listener(new Picasso.Listener() {
             @Override
             public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
